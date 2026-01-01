@@ -4,15 +4,13 @@ metadata:
   name: app-ingress
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    # Use HTTPS if needed
+    kubernetes.io/ingress.class: "gce"
 spec:
-  ingressClassName: nginx
   rules:
-
-  # Frontend
-  - host: app.local
-    http:
+  - http:
       paths:
+      # Frontend
       - path: /
         pathType: Prefix
         backend:
@@ -21,11 +19,8 @@ spec:
             port:
               number: 80
 
-  # Backend API
-  - host: api.app.local
-    http:
-      paths:
-      - path: /
+      # Backend API
+      - path: /api
         pathType: Prefix
         backend:
           service:
@@ -33,11 +28,8 @@ spec:
             port:
               number: 3000
 
-  # Prometheus
-  - host: prometheus.local
-    http:
-      paths:
-      - path: /
+      # Prometheus
+      - path: /prometheus
         pathType: Prefix
         backend:
           service:
@@ -45,11 +37,8 @@ spec:
             port:
               number: 9090
 
-  # Grafana
-  - host: grafana.local
-    http:
-      paths:
-      - path: /
+      # Grafana
+      - path: /grafana
         pathType: Prefix
         backend:
           service:

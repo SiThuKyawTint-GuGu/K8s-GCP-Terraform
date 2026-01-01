@@ -4,7 +4,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.app.local:8000/users")
+    fetch("http://136.110.55.223:3000/users")
       .then(res => res.json())
       .then(setUsers);
   }, []);

@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend:latest
-        imagePullPolicy: Never
+        image: guguskyler/backend:v2
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
 
