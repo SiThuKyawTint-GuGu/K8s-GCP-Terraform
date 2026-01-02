@@ -1,0 +1,6 @@
+gcloud container clusters get-credentials fullstack-cluster \
+  --zone asia-southeast1-a \
+  --project norse-botany-480203-i6
+
+Set Application Default Credentials (THIS IS REQUIRED)
+auth application-default login
