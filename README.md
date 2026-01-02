@@ -90,31 +90,3 @@ Rewrite this for GitHub portfolio style
 Make a company internal documentation version
 
 Just tell me 👍
-
-Internet
-   │
-   ▼
-┌───────────────────────────────┐
-│ GCP Firewall                  │  <-- Blocks or allows ports/IPs
-│ (Ingress/Egress rules)        │
-└───────────────────────────────┘
-   │
-   ▼
-┌───────────────────────────────┐
-│ Custom VPC (gke-vpc)          │
-│ Subnet: 10.10.0.0/16          │
-│                               │
-│  ┌─────────────────────────┐  │
-│  │ Node Pool: primary      │  │
-│  │                         │  │
-│  │ ├─ Node 1               │  │
-│  │ │   ├─ Pod: frontend    │  │
-│  │ │   │   └─ Service: LoadBalancer (External IP) │
-│  │ │   └─ Pod: backend     │  │
-│  │ │       └─ Service: ClusterIP (Internal)      │
-│  │ │                                             │
-│  │ └─ Node 2               │  │
-│  │     └─ Pod: monitoring  │  │
-│  │         └─ Services: ClusterIP (Prometheus/Grafana) │
-│  └─────────────────────────┘  │
-└───────────────────────────────┘
